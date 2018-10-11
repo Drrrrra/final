@@ -29,4 +29,8 @@ public class EmployeeRepository {
 	public int addEmployee(Map map) {
 		return template.insert("employee.addEmployee", map);
 	}
+	
+	public Map getAccount(Map map) {
+		return template.selectOne("employee.getAccount", map); 
+	}
 }
