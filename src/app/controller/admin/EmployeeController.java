@@ -17,7 +17,7 @@ import app.model.EmployeeRepository;
 public class EmployeeController {
 
 	@Autowired
-	EmployeeRepository employeeRepository;
+	EmployeeRepository employeeRepository;  
 	
 	
 	@GetMapping("/add.do")

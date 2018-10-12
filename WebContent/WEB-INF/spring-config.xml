@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 		
-	<context:component-scan base-package="app" />
+	<context:component-scan base-package="app" />   
 
 	<bean id="tilesViewResolver"
 		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" />
@@ -51,6 +51,8 @@
 			ref="sqlSessionFactory" />
 	</bean>
 	
+	
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
 	<websocket:handlers>
 		<websocket:mapping handler="webSocketController" path="/conn.do"/>
 	</websocket:handlers>
