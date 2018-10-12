@@ -22,15 +22,19 @@ public class EmployeeRepository {
 		return template.selectList("employee.getAllPositions");
 	}
 	
+	public int checkEmployee(Map data) {
+		return template.selectOne("employee.checkEmployee", data);
+	}
+	
+	public Map getEmployee(String id) {
+		return template.selectOne("employee.getEmployee", id);
+	}
+	
 	public String getNewEmployeeId() {
 		return "em"+ template.selectOne("employee.getEmployeeSeq");
 	}
 	
 	public int addEmployee(Map map) {
 		return template.insert("employee.addEmployee", map);
-	}
-	
-	public Map getAccount(Map map) {
-		return template.selectOne("employee.getAccount", map); 
 	}
 }
