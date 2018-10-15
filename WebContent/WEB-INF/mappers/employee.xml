@@ -27,6 +27,9 @@
 		select count(*) from employee where id=#{id } and pass=#{pass}
 	</select>	
 	
+	<update id="updatePass" parameterType="java.util.HashMap">
+		update employee set pass=#{npass} where id=#{id}
+	</update>
 	
 </mapper>
 

@@ -37,4 +37,8 @@ public class EmployeeRepository {
 	public int addEmployee(Map map) {
 		return template.insert("employee.addEmployee", map);
 	}
+	
+	public int updatePass(Map map) {
+		return template.update("employee.updatePass", map);
+	}
 }

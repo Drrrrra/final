@@ -12,7 +12,7 @@ import app.service.SocketService;
 
 
 @Controller
-public class AlertController extends TextWebSocketHandler {
+public class AlertSocketController extends TextWebSocketHandler {
 	
 	@Autowired
 	SocketService socketService;

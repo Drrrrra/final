@@ -6,4 +6,17 @@
 		<put-attribute name="left" value="/WEB-INF/views/guest/side.jsp"/>
 		<put-attribute name="center" value="/WEB-INF/views/guest/home.jsp"/>
 	</definition>
+	
+	<definition name="guest.modify" template="/WEB-INF/tiles/guest-template.jsp">
+		<put-attribute name="nav" value="/WEB-INF/views/guest/nav.jsp"/>
+		<put-attribute name="left" value="/WEB-INF/views/guest/side.jsp"/>
+		<put-attribute name="center" value="/WEB-INF/views/guest/private/modify.jsp"/>
+	</definition>
+	
+	<definition name="guest.chat" template="/WEB-INF/tiles/guest-template.jsp">
+		<put-attribute name="nav" value="/WEB-INF/views/guest/nav.jsp"/>
+		<put-attribute name="left" value="/WEB-INF/views/guest/side.jsp"/>
+		<put-attribute name="center" value="/WEB-INF/views/guest/chat/room.jsp"/>
+	</definition>
+	
 </tiles-definitions>
