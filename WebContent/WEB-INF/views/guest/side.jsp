@@ -1,3 +1,4 @@
+<%@page import="org.springframework.web.context.annotation.SessionScope"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div class="sidebar-sticky">
@@ -39,9 +40,8 @@
 		</a>
 	</h6>
 	<div id="alert" style="font-size: .75em">
-	
+		
 	</div>
-	
 	<script>
 		var ws = new WebSocket("ws://"+location.host+"${pageContext.servletContext.contextPath}/alert.do");
 		ws.onmessage = function(evt) {
@@ -51,9 +51,18 @@
 			case "login":
 				loginAlertHandle(obj);
 				break;
+			case "overlap" :
+				overlapHandle(obj);
+				break;
 			}
 		};
-				
+	 	var overlapHandle = function(obj) {
+			var html = "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">";
+			html += "누군가 당신의 계정으로 들어왔는데요 ?";
+			html += "</div>";
+			document.getElementById("alert").innerHTML += html;
+		} ;
+		// window.alert("Hi")	;	
 		var loginAlertHandle = function(obj) {
 			var html = "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">";
 			html += "<strong>【로그인】</strong><br/>" + obj.actor.NAME+"(" + obj.actor.DNAME+"/"+ obj.actor.PNAME+")";
@@ -62,6 +71,8 @@
 			html += "</button>";
 			html += "</div>";
 			document.getElementById("alert").innerHTML += html;
+			
 		}
+		
 	</script>
 </div>

@@ -41,24 +41,23 @@ public class WelcomeController {
 		}
 	}
 	
-	
-	
-	
 	@RequestMapping("/login.do")
 	public String loginHandle(WebRequest webRequest, @RequestParam Map p, HttpSession session) {
 		int cnt = employeeRepository.checkEmployee(p);
 		if(cnt > 0) {
 			// 중복로그인 막기 =======================================
-			String id =(String)p.get("id");
+			String id =(String)p.get("id");			
 			if(sessions.containsKey(id)) {
+				Map map = new HashMap<>();
+					map.put("mode", "overlap");
+				socketService.sendOne(map,id);
 				sessions.get(id).invalidate();
 			}
-			
 			sessions.put(id, session);
+			
 			//========================================================
 			Map one = employeeRepository.getEmployee(id);
 			webRequest.setAttribute("userId", id, WebRequest.SCOPE_SESSION);
-			
 			webRequest.setAttribute("user", one, WebRequest.SCOPE_SESSION);
 			webRequest.setAttribute("auth", "on", WebRequest.SCOPE_SESSION);
 			
@@ -66,6 +65,7 @@ public class WelcomeController {
 			Map msg = new HashMap<>();
 				msg.put("mode", "login");
 				msg.put("actor", one);
+//				msg.put("mode", "overlap");
 			socketService.sendAll(msg);
 			// socketService.sendOne(msg, "em1000");
 		}
