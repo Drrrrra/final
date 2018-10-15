@@ -43,6 +43,9 @@
 	var publicHandle = function(obj) {
 		var txt = obj.text;
 		var html = "<div class=\"alert alert-secondary\" role=\"alert\" style=\"padding:3px; margin-bottom:3px;\">";
+		html += obj.name;
+		html += obj.dName;
+		html += obj.pName;
 		html += obj.text;
 		html +="</div>";
 		document.getElementById("chatView").innerHTML += html;
