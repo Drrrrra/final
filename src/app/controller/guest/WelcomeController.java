@@ -69,7 +69,13 @@ public class WelcomeController {
 			socketService.sendAll(msg);
 			// socketService.sendOne(msg, "em1000");
 		}
-		return "redirect:/";		// redirect:/index.do	
+		return "redirect:/";	// redirect:/index.do
+	}
+		
+	@RequestMapping("/change.do")
+	public String changePassHandle(WebRequest wr, @RequestParam Map rp) {
+		
+		return "";
 	}
 }
 	
