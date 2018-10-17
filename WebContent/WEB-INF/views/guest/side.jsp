@@ -56,9 +56,22 @@
 				break;
 			case "duplicate":
 				duplicateAlertHandle(obj);
+				break;
+			case "newtalk":
+				newtalkAlertHandle(obj);	
 			}
 		};
 				
+		var newtalkAlertHandle = function(obj) {
+			var html = "<div class=\"alert alert-warning alert-dismissible fade show px-3 mt-4 mb-1\" role=\"alert\">";
+			html += "<strong>【채팅방】</strong><br/>새로운 채팅이 있습니다.";
+			html += "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">";
+			html += "<span aria-hidden=\"true\">&times;</span>";
+			html += "</button>";
+			html += "</div>";
+			document.getElementById("alert").innerHTML += html;
+		}
+		
 		var loginAlertHandle = function(obj) {
 			var html = "<div class=\"alert alert-warning alert-dismissible fade show px-3 mt-4 mb-1\" role=\"alert\">";
 			html += "<strong>【로그인】</strong><br/>" + obj.actor.NAME+"(" + obj.actor.DNAME+"/"+ obj.actor.PNAME+")";
@@ -68,7 +81,6 @@
 			html += "</div>";
 			document.getElementById("alert").innerHTML += html;
 		}
-		
 		var duplicateAlertHandle = function(obj) {
 			var html = "<div class=\"alert alert-danger px-3 mt-4 mb-1 \" role=\"alert\">";
 			html += "<strong>【중복로그인】</strong><br/>다른기기에서 로그인되었습니다.<br/>재로그인해주십시요.";
