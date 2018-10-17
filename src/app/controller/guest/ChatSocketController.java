@@ -64,7 +64,7 @@ public class ChatSocketController extends TextWebSocketHandler {
 
 		for (int i = 0; i < sockets.size(); i++) {
 			try {
-				TextMessage msg = new TextMessage(gson.toJson(jmap));
+				TextMessage msg = new TextMessage(jmap);
 				sockets.get(i).sendMessage(msg);			
 			} catch (Exception e) {
 				e.printStackTrace();

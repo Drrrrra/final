@@ -43,10 +43,7 @@
 	var publicHandle = function(obj) {
 		var txt = obj.text;
 		var html = "<div class=\"alert alert-secondary\" role=\"alert\" style=\"padding:3px; margin-bottom:3px;\">";
-		html += obj.name;
-		html += obj.dName;
-		html += obj.pName;
-		html += obj.text;
+		html += "<b>"+obj.name+"<small style=color:gray> ("+obj.dName+" / "+obj.pName+") </small> : "+obj.text;
 		html +="</div>";
 		document.getElementById("chatView").innerHTML += html;
 		document.getElementById("chatView").scrollTop = 
