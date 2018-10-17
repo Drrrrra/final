@@ -71,7 +71,15 @@ public class ChatSocketController extends TextWebSocketHandler {
 			}
 		}
 	
-
+		List<String> current = new ArrayList<>();
+		for (int i = 0; i < sockets.size(); i++) {
+			WebSocketSession ws = sockets.get(i);
+			String userId = (String) ws.getAttributes().get("userId");
+			current.add(userId);
+		}
+		String txt = "{\"mode\":\"newtalk\"}";
+		service.sendExcludeGroup(txt, current);
+	
 	}
 
 	@Override

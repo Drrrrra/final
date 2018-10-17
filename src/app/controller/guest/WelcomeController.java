@@ -62,20 +62,20 @@ public class WelcomeController {
 			Map msg = new HashMap<>();
 			msg.put("mode", "login");
 			msg.put("actor", one);
-//				msg.put("mode", "overlap");
+
 			socketService.sendAll(msg);
 			// socketService.sendOne(msg, "em1000");
 		}
 		return "redirect:/"; // redirect:/index.do
 	}
-
+	
 	@RequestMapping("/logout.do")
 	public String logoutHandle(HttpSession session) {
 		String userId = (String) session.getAttribute("userId");
 		session.removeAttribute(userId);
 		session.invalidate();
 
-		return "redirect: /";
+		return "redirect:/";
 	}
 
 }

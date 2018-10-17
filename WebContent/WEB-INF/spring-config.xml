@@ -14,6 +14,7 @@
 	<websocket:handlers>
 		<websocket:mapping handler="alertSocketController" path="/alert.do" />
 		<websocket:mapping handler="chatSocketController" path="/chat.do" />
+		<websocket:mapping handler="boardSocketController" path="/board.do"/>
 		<websocket:handshake-interceptors>
 			<bean
 				class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor" />

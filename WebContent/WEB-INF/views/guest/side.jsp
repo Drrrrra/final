@@ -9,10 +9,11 @@
 				data-feather="file"></span> Message
 		</a></li>
 		<li class="nav-item"><a class="nav-link" href="#"> <span
-				data-feather="shopping-cart"></span> Board
+				data-feather="shopping-cart"></span> Memebers
 		</a></li>
-		<li class="nav-item"><a class="nav-link" href="#"> <span
-				data-feather="users"></span> Members
+		<li class="nav-item"><a class="nav-link ${ uri=='board' ? 'active':'' }" 
+		href="${pageContext.servletContext.contextPath }/board/draw.do"> 
+		<span data-feather="users"></span> Board
 		</a></li>
 		<li class="nav-item"><a class="nav-link ${ uri=='chat' ? 'active':'' }" 
 			href="${pageContext.servletContext.contextPath }/chat/room.do"> <span
@@ -27,8 +28,9 @@
 		</a>
 	</h6>
 	<ul class="nav flex-column mb-2">
-		<li class="nav-item"><a class="nav-link ${ uri=='modify' ? 'active':'' }" href="${pageContext.servletContext.contextPath }/private/modify.do"> <span
-				data-feather="file-text"></span> Change Profile
+		<li class="nav-item"><a class="nav-link ${ uri=='modify' ? 'active':'' }" 
+		href="${pageContext.servletContext.contextPath }/private/modify.do"> 
+		<span data-feather="file-text"></span> Change Profile
 		</a></li>
 		<li class="nav-item"><a class="nav-link" href="#"> <span
 				data-feather="file-text"></span> - </a></li>
