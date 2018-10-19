@@ -3,6 +3,7 @@ package app.controller.guest;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,5 +14,10 @@ public class BoardController {
 	public String drawHandler(Map map) {
 		map.put("uri", "board");
 		return "guest.board";
+	}
+	
+	@GetMapping("/write.do")
+	public String writehandler() {
+		return "guest.write";
 	}
 }

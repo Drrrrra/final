@@ -17,7 +17,7 @@
 </div>
 
 <h4>Bulletin Board</h4>
-<div style="height: 520px; overflow-y: scroll; align:center" id="boardList">
+<div style="height: 520px; overflow-y: scroll; align:center" id="writeOn">
 	
 </div>
 <p align="right">
